@@ -1,0 +1,99 @@
+#cart-container {
+  overflow-x: auto;
+}
+
+#cart-container table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+  white-space: nowrap;
+}
+#cart-container table thead {
+  height: 40px;
+  font-weight: 600;
+}
+#cart-container table thead td {
+  background: #666262;
+  color: #fff;
+  border: none;
+  padding: 6px 0;
+}
+#cart-container table td {
+  border: 1px solid #888484;
+  text-align: center;
+}
+#cart-container table td:nth-child(1) {
+  width: 200px;
+}
+#cart-container table td:nth-child(2) {
+  width: 300px;
+}
+#cart-container table td:nth-child(3),
+#cart-container table td:nth-child(4),
+#cart-container table td:nth-child(5) {
+  width: 200px;
+}
+#cart-container table td:nth-child(6) {
+  width: 200px;
+}
+#cart-container table tbody img {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+#cart-container table tbody button {
+  width: 25px;
+}
+#cart-container table tbody button.ml-auto {
+  width: 60px;
+}
+#cart-container table tbody i {
+  color: black;
+  font-size: 100px;
+}
+
+#cart-bottom .Total > div {
+  height: 40px;
+  border: 1px solid #fff;
+  display: flex;
+  justify-content: flex-start;
+}
+
+#cart-bottom .Total div > button {
+  height: 40px;
+  color: #fff;
+  background-color: #424141;
+  border: none;
+}
+
+#cart-bottom .Remove_All > div {
+  height: 40px;
+  border: 1px solid #fff;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#cart-bottom .Remove_All div > button {
+  height: 40px;
+  color: #fff;
+  background-color: #424141;
+  border: none;
+}
+
+#cart-shop .Total > div {
+  height: 40px;
+  border: 1px solid #fff;
+  display: flex;
+  justify-content: flex-start;
+}
+
+#cart-shop .Total div > button {
+  height: 40px;
+  color: #fff;
+  background-color: #2e9abe;
+  border: none;
+}
+
+

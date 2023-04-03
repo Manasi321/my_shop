@@ -1,0 +1,82 @@
+<ng-container *ngIf="getCartDetails != 0">
+  <section id="cart-container" class="container my-5">
+    <table width="100%">
+      <thead>
+        <tr>
+          <td>&nbsp;&nbsp;Image</td>
+          <td>Product</td>
+          <td>Price</td>
+          <td>Quantity</td>
+          <td>Total</td>
+          <td>Remove</td>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let getCartDetail of getCartDetails">
+          <td>
+            <img src="{{ getCartDetail.productImg }}" alt="" />
+          </td>
+          <td>
+            <h5>{{ getCartDetail.productName }}</h5>
+          </td>
+          <td>
+            <h5>₹{{ getCartDetail.productPrice }}</h5>
+          </td>
+
+          <td>
+            <button (click)="DecQnt(getCartDetail.prodId, getCartDetail.qnt)">
+              -
+            </button>
+            <span
+              ><button>{{ getCartDetail.qnt }}</button></span
+            >
+            <button (click)="IncQnt(getCartDetail.prodId, getCartDetail.qnt)">
+              +
+            </button>
+          </td>
+
+          <td>
+            ₹{{ getCartDetail.qnt * getCartDetail.productPrice | number }}
+          </td>
+          <td>
+            <a><button class="ml-auto" (click)="singleDelete(getCartDetail.prodId)">&nbsp;Delete &nbsp;</button></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="cart-bottom" class="container">
+    <div class="row">
+      <div class="Total col-lg-3 col-md-4 col-6 mb-4">
+        <div>
+          <button>&nbsp;Total : ₹{{ total }} &nbsp;</button>
+        </div>
+      </div>
+      <div class="Remove_All col-lg-9 col-md-8 col-6 mb-4">
+        <div>
+          <button class="ml-auto" (click)="removeall()">
+            &nbsp;Remove All Item &nbsp;
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="cart-shop" class="container">
+    <div class="row">
+      <div class="Total col-lg-3 col-md-4 col-6 mb-4">
+        <div>
+          <button routerLink="" routerLinkActive="activelink">&nbsp;Shop More &nbsp;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</ng-container>
+
+<ng-container *ngIf="getCartDetails == 0">
+  <!--Adding router link to home page-->
+  <button class="btn btn-primary" routerLink="" routerLinkActive="activelink">
+    SHOP NOW
+  </button>
+</ng-container>

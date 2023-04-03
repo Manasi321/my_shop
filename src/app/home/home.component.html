@@ -1,0 +1,25 @@
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col-lg-4" *ngFor="let pd of containProductArray">
+      <div class="productBox">
+        <img [src]="pd.productImg" />
+        <h1>{{ pd.productName }}</h1>
+        <p>{{ pd.productDetail }}</p>
+        <p>{{ pd.productWeight }}</p>
+        <p>{{ pd.productPrice | currency: "INR" }}</p>
+        <button class="minusbtn btn-primary btn-block" (click)="dec(pd)">
+          -
+        </button>
+        <span
+          ><button>{{ pd.qnt }}</button></span
+        >
+        <button class="plusbtn btn-primary btn-block" (click)="inc(pd)">
+          +
+        </button>
+        <button class="mainbtn btn-primary btn-block" (click)="addCart(pd)">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
